@@ -16,6 +16,10 @@ spec:
     spec:
       containers:
       - name: jenkins-spring-java
-        image: jenkins-spring-java:replaceImageTag
-        ports:
-        - containerPort: 8080
+        image: ratnparkhiv/jenkins-spring-java:1.0.0-6
+      resources:
+       limits:
+        memory: "256Mi"
+        cpu: "500m"
+      ports:
+       -containerPort: 8080
