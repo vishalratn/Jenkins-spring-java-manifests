@@ -2,12 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-spring-java
-  labels:
-    app: jenkins-spring-java
 spec:
   replicas: 2
   selector:
-    nmatchLabels:
+    matchLabels:
       app: jenkins-spring-java
   template:
     metadata:
@@ -16,7 +14,7 @@ spec:
     spec:
       containers:
         - name: jenkins-spring-java
-          image: ratnparkhiv/jenkins-spring-java:1.0.0-6
+          image: ratnparkhiv/jenkins-spring-java:1.0.0-7
           resources:
             limits:
               memory: "256Mi"
